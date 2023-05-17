@@ -1,9 +1,7 @@
 import java.util.*;
 
 /**
- * Representa un menú con diferentes operaciones para el código Complejo.java.
- * Permite realizar operaciones básicas con números complejos.
- * Los números complejos se representan mediante la clase Complejo.
+ * Representa un menú con diferentes operaciones para el código complejo.java
  *
  * @author GRUPO1
  * @version 1.0.0
@@ -12,9 +10,9 @@ public class Main {
     private static Scanner teclado = new Scanner(System.in);
 
     /**
-     * Muestra todas las opciones disponibles del menú.
+     * Muestra todas las opciones disponibles del menú
      *
-     * @return La opción seleccionada por el usuario.
+     * @return La opción seleccionada
      */
     public static int menu() {
         int opcion;
@@ -28,18 +26,50 @@ public class Main {
         System.out.println("5) SALIR");
         System.out.println();
         System.out.print("OPCIÓN: ");
-        opcion = teclado.nextInt();
+        opcion = obtenerEntero();
         return opcion;
+    }
+
+    /**
+     * Método para obtener un entero válido desde la entrada del usuario
+     *
+     * @return El entero válido ingresado por el usuario
+     */
+    public static int obtenerEntero() {
+        int entero;
+        try {
+            entero = Integer.parseInt(teclado.nextLine());
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Entrada inválida. Debes ingresar un número entero entre 1 y 5.");
+        }
+        return entero;
+    }
+
+    /**
+     * Método para obtener un número complejo válido desde la entrada del usuario
+     *
+     * @return El número complejo válido ingresado por el usuario
+     */
+    public static Complejo obtenerComplejo() {
+        int real, imag;
+        try {
+            System.out.print("Escribe el real: ");
+            real = obtenerEntero();
+            System.out.print("Escribe el imaginario: ");
+            imag = obtenerEntero();
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Entrada inválida para el número complejo. Debes ingresar un número entero.");
+        }
+        return new Complejo(real, imag);
     }
 
     /**
      * Método principal que ejecuta el programa y muestra el menú interactivo.
      *
-     * @param args Argumentos de la línea de comandos (no se utilizan).
+     * @param args Argumentos de la línea de comandos
      */
     public static void main(String args[]) {
         Complejo complejo1, complejo2, resultado;
-        int real, imag;
         int opcion;
 
         do {
@@ -47,77 +77,68 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Escribe el primer número real: ");
-                    real = teclado.nextInt();
-                    System.out.print("Escribe el primer número imaginario: ");
-                    imag = teclado.nextInt();
-                    complejo1 = new Complejo(real, imag);
+                    try {
+                        System.out.println("Primer número complejo:");
+                        complejo1 = obtenerComplejo();
 
-                    System.out.print("Escribe el segundo número real: ");
-                    real = teclado.nextInt();
-                    System.out.print("Escribe el segundo número imaginario: ");
-                    imag = teclado.nextInt();
-                    complejo2 = new Complejo(real, imag);
+                        System.out.println("Segundo número complejo:");
+                        complejo2 = obtenerComplejo();
 
-                    resultado = complejo1.suma(complejo2);
-                    System.out.println("El resultado es: " + resultado);
+                        resultado = complejo1.suma(complejo2);
+                        System.out.println("El resultado es: " + resultado);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
 
                 case 2:
-                    System.out.print("Escribe el primer número real: ");
-                    real = teclado.nextInt();
-                    System.out.print("Escribe el primer número imaginario: ");
-                    imag = teclado.nextInt();
-                    complejo1 = new Complejo(real, imag);
+                    try {
+                        System.out.println("Primer número complejo:");
+                        complejo1 = obtenerComplejo();
 
-                    System.out.print("Escribe el segundo número real: ");
-                    real = teclado.nextInt();
-                    System.out.print("Escribe el segundo número imaginario: ");
-                    imag = teclado.nextInt();
-                    complejo2 = new Complejo(real, imag);
+                        System.out.println("Segundo número complejo:");
+                        complejo2 = obtenerComplejo();
 
-                    resultado = complejo1.resta(complejo2);
-                    System.out.println("El resultado es: " + resultado);
+                        resultado = complejo1.resta(complejo2);
+                        System.out.println("El resultado es: " + resultado);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
 
                 case 3:
-                    System.out.print("Escribe el primer número real: ");
-                    real = teclado.nextInt();
-                    System.out.print("Escribe el primer número imaginario: ");
-                    imag = teclado.nextInt();
-                    complejo1 = new Complejo(real, imag);
+                    try {
+                        System.out.println("Primer número complejo:");
+                        complejo1 = obtenerComplejo();
 
-                    System.out.print("Escribe el segundo número real: ");
-                    real = teclado.nextInt();
-                    System.out.print("Escribe el segundo número imaginario: ");
-                    imag = teclado.nextInt();
-                    complejo2 = new Complejo(real, imag);
+                        System.out.println("Segundo número complejo:");
+                        complejo2 = obtenerComplejo();
 
-                    resultado = complejo1.multiplicacion(complejo2);
-                    System.out.println("El resultado es: " + resultado);
+                        resultado = complejo1.multiplicacion(complejo2);
+                        System.out.println("El resultado es: " + resultado);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
 
                 case 4:
-                    System.out.print("Escribe el primer número real: ");
-                    real = teclado.nextInt();
-                    System.out.print("Escribe el primer número imaginario: ");
-                    imag = teclado.nextInt();
-                    complejo1 = new Complejo(real, imag);
+                    try {
+                        System.out.println("Primer número complejo:");
+                        complejo1 = obtenerComplejo();
 
-                    System.out.print("Escribe el segundo número real: ");
-                    real = teclado.nextInt();
-                    System.out.print("Escribe el segundo número imaginario: ");
-                    imag = teclado.nextInt();
-                    complejo2 = new Complejo(real, imag);
+                        System.out.println("Segundo número complejo:");
+                        complejo2 = obtenerComplejo();
 
-                    resultado = complejo1.division(complejo2);
-                    System.out.println("El resultado es: " + resultado);
+                        resultado = complejo1.division(complejo2);
+                        System.out.println("El resultado es: " + resultado);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
 
                 case 5:
                     System.out.println("Adiós");
                     break;
-
                 default:
                     break;
             }
