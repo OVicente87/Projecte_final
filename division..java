@@ -6,7 +6,7 @@ public Complejo division(Complejo divisor) {
         if (divisor.getParteReal() == 0 && divisor.getParteImaginaria() == 0) {
             throw new ArithmeticException("No se puede dividir por cero.");
         }
-          // Obtiene los valores del divisor con los geters
+          // Obtiene los valores de l divisor con los geters
           // Asigna la parte real a la variable 'divisorReal'
         int divisorReal = divisor.getParteReal();
           // Asigna a la variable 'divisorImaginario' la parte imaginaria del divisor
