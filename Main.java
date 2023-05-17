@@ -5,7 +5,7 @@ import java.util.*;
  * Permite realizar operaciones básicas con números complejos.
  * Los números complejos se representan mediante la clase Complejo.
  *
- * @author Grupo1
+ * @author GRUPO1
  * @version 1.0.0
  */
 public class Main {
