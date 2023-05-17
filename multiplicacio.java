@@ -14,9 +14,9 @@ public Complejo multiplicacion(Complejo multiplicador) {
 
 // Exemple de execució per a veure-ho mes clar:
 
-Complejo numero1 = new Complejo(2, 3); // Creem numero1 amb valor real 2 e imaginari 3
-Complejo numero2 = new Complejo(4, 5); // Creem numero2 amb valor real 4 e imaginari 5
+Complejo numero1 = new Complejo(2, 3); // Creem numero1 amb valor real 2 e imaginari 3 --> (2 +3i)
+Complejo numero2 = new Complejo(4, 5); // Creem numero2 amb valor real 4 e imaginari 5 --> (4 +5i)
 
 Complejo resultado = numero1.multiplicacion(numero2); // Creem el resultat que es igual a numero1 multiplicat pel numero2
 
-System.out.println(resultado); // I fem un print del objecte resultat que es -7 +22i
+System.out.println(resultado); // I fem un print del objecte resultat que es (-7 +22i)
