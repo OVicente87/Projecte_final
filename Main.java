@@ -92,7 +92,39 @@ public class Main {
                     break;
 
                 case 2:
-                    try {
+                	String c1 = "", c2 = "";
+            		int count;
+            		boolean correcte = false;
+            		Scanner scan = new Scanner(System.in);
+            		while (correcte == false) {
+            			System.out.print("Inserta complex 1: ");
+            			c1 = scan.nextLine();
+            			System.out.print("Inserta complex 2: ");
+            			c2 = scan.nextLine();
+            			count = 0;
+            			if (c1.length() >= 4 && c2.length() >= 4) {
+            				for (int i = 0; i < c1.length(); i++) {
+            					if (c1.charAt(i) == '+' || c1.charAt(i) == 'i')
+            						count++;
+            				}
+            				for (int i = 0; i < c2.length(); i++) {
+            					if (c2.charAt(i) == '+' || c2.charAt(i) == 'i')
+            						count++;
+            				}
+            				if (count == 4) {
+            					correcte = true;
+            				} else {
+            					System.out.println("Format incorrecte");
+            				}
+            			} else {
+            				System.out.println("Format incorrecte");
+            			}
+            		}
+            		System.out.println("El Resultat de la Resta és: " + Resta.calculResta(c1, c2));
+                    break;
+                    
+                    /*
+                     try {
                         System.out.println("Primer número complejo:");
                         complejo1 = obtenerComplejo();
 
@@ -105,6 +137,7 @@ public class Main {
                         System.out.println("Error: " + e.getMessage());
                     }
                     break;
+                     */
 
                 case 3:
                     try {
